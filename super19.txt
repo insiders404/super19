@@ -1,0 +1,14 @@
+echo "Enter file name :"
+read f
+for f in *.c
+do
+if [ -f$f ]
+then
+echo "The original content of $f file :"
+cat $f
+echo "The translated first 2 lines of $f file :"
+head -2 $f|tr '[a-z]' '[A-Z]'
+else
+echo "$f is not a file"
+fi
+done
